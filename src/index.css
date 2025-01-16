@@ -1,0 +1,17 @@
+/******************************************************************************
+ * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
+ * @CreatedDate           : 2025-01-16 17:17:31                               *
+ * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
+ * @LastEditDate          : 2025-01-16 17:24:04                               *
+ *****************************************************************************/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  background-color: silver;
+}
