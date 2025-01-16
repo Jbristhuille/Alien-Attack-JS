@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-16 17:17:31                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-16 17:24:04                               *
+ * @LastEditDate          : 2025-01-16 17:36:01                               *
  *****************************************************************************/
 
 * {
@@ -14,4 +14,5 @@
   width: 100vw;
   height: 100vh;
   background-color: silver;
+  position: relative;
 }
