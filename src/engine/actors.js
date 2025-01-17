@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-16 17:27:01                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-16 18:18:15                               *
+ * @LastEditDate          : 2025-01-17 11:02:51                               *
  *****************************************************************************/
 
 class Actor {
@@ -10,6 +10,14 @@ class Actor {
     this.elem = null;
     this.pos = {x: 0, y: 0};
     this.options = options;
+  }
+
+  get speed() {
+    return this.options.speed;
+  }
+
+  get position() {
+    return this.pos;
   }
 
   applyOptions() {
@@ -32,12 +40,5 @@ class Actor {
     this.setPosition(coord);
 
     game.append(this.elem);
-  }
-
-  move(obj) {
-    this.setPosition([
-      this.pos.x + this.options.speed * obj.x,
-      this.pos.y + this.options.speed * obj.y
-    ]);
   }
 }
