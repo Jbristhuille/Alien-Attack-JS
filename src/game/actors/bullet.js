@@ -2,11 +2,12 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 12:00:12                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 12:30:18                               *
+ * @LastEditDate          : 2025-01-17 12:36:58                               *
  *****************************************************************************/
 
 class Bullet {
-  constructor(coord) {
+  constructor(coord, options) {
+    this.options = options;
     this.inter = null;
     this.speed = 20;
 
@@ -23,6 +24,7 @@ class Bullet {
   destroy() {
     this.bullet.destroy();
     this.bullet = null;
+    if (this.options.onDestroy) this.options.onDestroy();
   }
 
   loop() {

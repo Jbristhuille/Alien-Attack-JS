@@ -2,12 +2,14 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 11:04:45                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 12:34:22                               *
+ * @LastEditDate          : 2025-01-17 12:37:13                               *
  *****************************************************************************/
 
 class Player {
   constructor() {
     this.speed = 10;
+    this.bulletsCount = 0;
+    this.maxBullet = 1;
     this.player = new Actor({
       width: 50,
       height: 50,
@@ -37,7 +39,13 @@ class Player {
       }
   
       if (isKeyDown(" ")) {
-        new Bullet([this.player.position.x + this.player.width/2, this.player.position.y]);
+        if (this.bulletsCount < this.maxBullet) {
+          this.bulletsCount++;
+          new Bullet(
+            [this.player.position.x + this.player.width/2, this.player.position.y],
+            {onDestroy: () => this.bulletsCount = 0}
+          );
+        }
       }
     }, GAME_LOOP);
   }
