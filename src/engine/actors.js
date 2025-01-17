@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-16 17:27:01                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 11:02:51                               *
+ * @LastEditDate          : 2025-01-17 12:18:36                               *
  *****************************************************************************/
 
 class Actor {
@@ -12,12 +12,16 @@ class Actor {
     this.options = options;
   }
 
-  get speed() {
-    return this.options.speed;
-  }
-
   get position() {
     return this.pos;
+  }
+
+  get width() {
+    return this.options.width;
+  }
+
+  get height() {
+    return this.options.height;
   }
 
   applyOptions() {
@@ -40,5 +44,13 @@ class Actor {
     this.setPosition(coord);
 
     game.append(this.elem);
+  }
+
+  isSpawn() {
+    return this.elem ? true : false;
+  }
+
+  destroy() {
+    this.elem.remove();
   }
 }

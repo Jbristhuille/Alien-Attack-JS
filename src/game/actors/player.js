@@ -2,14 +2,14 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 11:04:45                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 11:08:16                               *
+ * @LastEditDate          : 2025-01-17 12:21:30                               *
  *****************************************************************************/
 
 function playerInit() {
+  const speed = 10;
   const player = new Actor({
     width: 50,
     height: 50,
-    speed: 10,
     color: "red"
   });
 
@@ -21,18 +21,19 @@ function playerInit() {
   setInterval(() => { // Game loop
     if (isKeyDown("q")) {
       if (player.pos.x > 0) {
-        player.setPosition([player.position.x + player.speed * -1, player.position.y]);
+        player.setPosition([player.position.x + speed * -1, player.position.y]);
       }
     }
 
     if (isKeyDown("d")) {
       if (player.pos.x < game.offsetWidth - player.options.width) {
-        player.setPosition([player.position.x + player.speed * 1, player.position.y]);
+        player.setPosition([player.position.x + speed * 1, player.position.y]);
       }
     }
 
     if (isKeyDown(" ")) {
-      // spawn projectile and move it
+      console.log("space");
+      spawnBullet([player.position.x + player.width/2, player.position.y]);
     }
   }, GAME_LOOP);
 }
