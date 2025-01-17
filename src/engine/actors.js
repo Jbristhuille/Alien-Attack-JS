@@ -2,11 +2,12 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-16 17:27:01                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 12:18:36                               *
+ * @LastEditDate          : 2025-01-17 14:28:57                               *
  *****************************************************************************/
 
 class Actor {
   constructor(options) {
+    this.id = Date.now() + Math.floor(Math.random() * 999);
     this.elem = null;
     this.pos = {x: 0, y: 0};
     this.options = options;
@@ -44,6 +45,7 @@ class Actor {
     this.setPosition(coord);
 
     game.append(this.elem);
+    sceneManager.addActor(this);
   }
 
   isSpawn() {
@@ -52,5 +54,6 @@ class Actor {
 
   destroy() {
     this.elem.remove();
+    sceneManager.removeActor(this);
   }
 }
