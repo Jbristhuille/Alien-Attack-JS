@@ -2,46 +2,40 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 12:00:12                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 12:23:26                               *
+ * @LastEditDate          : 2025-01-17 12:30:18                               *
  *****************************************************************************/
 
-var bullet;
-var bulletCount = 0;
-let inter;
-const speed = 20;
+class Bullet {
+  constructor(coord) {
+    this.inter = null;
+    this.speed = 20;
 
-function destroyBullet(b) {
-  b.destroy();
+    this.bullet = new Actor({
+      width: 10,
+      height: 20,
+      color: "yellow"
+    });
+  
+    this.bullet.spawn(game, [coord[0] - this.bullet.width/2, coord[1] - this.bullet.height]);
+    this.loop();
+  }
 
-  bulletCount = 0;
-  bullet = null;
-}
+  destroy() {
+    this.bullet.destroy();
+    this.bullet = null;
+  }
 
-function loop(b) {
-  inter = setInterval(() => {
-    if (b.isSpawn()) {
-      b.setPosition([b.position.x, b.position.y - speed]);
-
-      if (b.position.y < 0 - b.height) {
-        clearInterval(inter);
-        inter = null;
-        destroyBullet(b);
+  loop() {
+    this.inter = setInterval(() => {
+      if (this.bullet.isSpawn()) {
+        this.bullet.setPosition([this.bullet.position.x, this.bullet.position.y - this.speed]);
+  
+        if (this.bullet.position.y < 0 - this.bullet.height) {
+          clearInterval(this.inter);
+          this.inter = null;
+          this.destroy();
+        }
       }
-    }
-  }, GAME_LOOP);
-}
-
-function spawnBullet(coord) {
-  bullet = new Actor({
-    width: 10,
-    height: 20,
-    color: "yellow"
-  });
-
-  if (bulletCount === 0) {
-    bulletCount++;
-    bullet.spawn(game, [coord[0] - bullet.width/2, coord[1] - bullet.height]);
-
-    loop(bullet);
+    }, GAME_LOOP);
   }
 }

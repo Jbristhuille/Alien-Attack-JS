@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 11:04:45                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 12:21:30                               *
+ * @LastEditDate          : 2025-01-17 12:31:06                               *
  *****************************************************************************/
 
 function playerInit() {
@@ -32,8 +32,7 @@ function playerInit() {
     }
 
     if (isKeyDown(" ")) {
-      console.log("space");
-      spawnBullet([player.position.x + player.width/2, player.position.y]);
+      new Bullet([player.position.x + player.width/2, player.position.y]);
     }
   }, GAME_LOOP);
 }
