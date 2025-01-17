@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 11:04:45                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 11:05:47                               *
+ * @LastEditDate          : 2025-01-17 11:08:16                               *
  *****************************************************************************/
 
 function playerInit() {
