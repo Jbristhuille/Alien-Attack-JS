@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-16 17:27:01                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 14:28:57                               *
+ * @LastEditDate          : 2025-01-17 14:55:45                               *
  *****************************************************************************/
 
 class Actor {
@@ -53,7 +53,7 @@ class Actor {
   }
 
   destroy() {
+    sceneManager.removeActor(this.id);
     this.elem.remove();
-    sceneManager.removeActor(this);
   }
 }

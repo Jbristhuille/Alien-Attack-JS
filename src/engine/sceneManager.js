@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 14:15:49                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 14:52:17                               *
+ * @LastEditDate          : 2025-01-17 14:57:41                               *
  *****************************************************************************/
 
 class SceneManager {
