@@ -2,7 +2,7 @@
  * @Author                : Jbristhuille<jbristhuille@gmail.com>              *
  * @CreatedDate           : 2025-01-17 14:15:49                               *
  * @LastEditors           : Jbristhuille<jbristhuille@gmail.com>              *
- * @LastEditDate          : 2025-01-17 14:46:19                               *
+ * @LastEditDate          : 2025-01-17 14:52:17                               *
  *****************************************************************************/
 
 class SceneManager {
@@ -41,7 +41,8 @@ class SceneManager {
               yMax: this.actors[p].position.y + this.actors[p].height
             }
 
-            if (b.xMin > a.xMin && b.xMax < a.xMax && b.yMin > a.yMin && b.yMax < a.yMax) {
+            if ((b.xMin > a.xMin || b.xMax > a.xMin) && (b.xMin < a.xMax || b.xMax < a.xMax) &&
+                (b.yMin > a.yMin || b.yMax > a.yMin) && (b.yMin < a.yMax || b.yMax < a.yMax)) {
               if (this.onCollide) this.onCollide(this.actors[i], this.actors[p]);
             }
           }
